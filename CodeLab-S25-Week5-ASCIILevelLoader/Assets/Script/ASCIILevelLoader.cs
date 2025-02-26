@@ -4,17 +4,19 @@ using UnityEngine;
 
 public class ASCIILevelLoader : MonoBehaviour
 {
+    //Prefabs
     public GameObject prefabPlayer;
     public GameObject prefabWall;
     public GameObject prefabObstacle;
     public GameObject prefabGoal;
     
+    //File variables
     string filePath;
-
     public string fileName;
 
     int currentLevel = 0;
 
+    //Property to auto load a level whenever CurrentLevel changes
     public int CurrentLevel
     {
         set
@@ -28,24 +30,28 @@ public class ASCIILevelLoader : MonoBehaviour
         }
     }
 
+    //Offsets
     public float offsetX = -3;
     public float offsetY = -3;
 
+    //GameObject for parenting all level objects to
     GameObject levelHolder;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
-        CurrentLevel = 0;
+        CurrentLevel = 0; //set the level to 0 at load level 0 at the start
     }
 
     public void LoadLevel()
     {
+        //if we have a current level, destroy it
         if (levelHolder != null)
         {
             Destroy(levelHolder);
         }
 
+        //create a new level hodlder
         levelHolder = new GameObject("levelHolder");
 
         filePath = Application.dataPath;
@@ -53,6 +59,7 @@ public class ASCIILevelLoader : MonoBehaviour
         //string fileContents = File.ReadAllText(filePath + fileName);
         //Debug.Log(fileContents);
 
+        //load each line of the file into separate lines in an array
         string[] lines = 
             File.ReadAllLines(
                 filePath + fileName.Replace("<num>", currentLevel.ToString()));
@@ -90,9 +97,12 @@ public class ASCIILevelLoader : MonoBehaviour
                         break;
                 }
 
+                //if we created a gameObject for this character
                 if (newObj != null)
                 {
+                    //put it underneath the levelholder object
                     newObj.transform.parent = levelHolder.transform;
+                    //and set it's position
                     newObj.transform.position =
                         new Vector3(x + offsetX, -y + offsetY, 0);
                 }
