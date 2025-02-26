@@ -6,13 +6,28 @@ public class ASCIILevelLoader : MonoBehaviour
 {
     public GameObject prefabPlayer;
     public GameObject prefabWall;
+    public GameObject prefabObstacle;
+    public GameObject prefabGoal;
     
     string filePath;
 
     public string fileName;
 
-    public int currentLevel = 0;
-    
+    int currentLevel = 0;
+
+    public int CurrentLevel
+    {
+        set
+        {
+            currentLevel = value;
+            LoadLevel();
+        }
+        get
+        {
+            return currentLevel;
+        }
+    }
+
     public float offsetX = -3;
     public float offsetY = -3;
 
@@ -21,10 +36,10 @@ public class ASCIILevelLoader : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
-        LoadLevel();
+        CurrentLevel = 0;
     }
 
-    void LoadLevel()
+    public void LoadLevel()
     {
         if (levelHolder != null)
         {
@@ -38,7 +53,9 @@ public class ASCIILevelLoader : MonoBehaviour
         //string fileContents = File.ReadAllText(filePath + fileName);
         //Debug.Log(fileContents);
 
-        string[] lines = File.ReadAllLines(filePath + fileName);
+        string[] lines = 
+            File.ReadAllLines(
+                filePath + fileName.Replace("<num>", currentLevel.ToString()));
 
         //looping through each line of the file
         for (int y = 0; y < lines.Length; y++)
@@ -62,6 +79,12 @@ public class ASCIILevelLoader : MonoBehaviour
                         break;
                     case 'W': //we got a W in the file
                         newObj = Instantiate<GameObject>(prefabWall);
+                        break;
+                    case '*':
+                        newObj = Instantiate<GameObject>(prefabObstacle);
+                        break;
+                    case 'G':
+                        newObj = Instantiate<GameObject>(prefabGoal);
                         break;
                     default:
                         break;

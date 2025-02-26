@@ -287,8 +287,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabPlayer: {fileID: 9141155123139783537, guid: 18b2135cfe0c14a158a167395a8d60ca, type: 3}
   prefabWall: {fileID: 8105379545149775092, guid: 86a5d6b46b84a47f3a8d1478944403cb, type: 3}
-  fileName: /Resources/Levels/Level0.txt
-  currentLevel: 0
+  prefabObstacle: {fileID: 7735494973393715681, guid: 92f510f19496a45f0bb2fe51298ce44a, type: 3}
+  prefabGoal: {fileID: 650037340549820017, guid: e33c213753dcf46eaa36e10d69c75df6, type: 3}
+  fileName: /Resources/Levels/Level<num>.txt
   offsetX: -5
   offsetY: 5
 --- !u!4 &392230696
