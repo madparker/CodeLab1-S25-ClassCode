@@ -12,6 +12,7 @@ public class MovableObject : MonoBehaviour
     {
         fileName = name + ".json";
         
+        //use static function in Util to get the vec from the file
         transform.position = Util.GetVector3FromFile(dir, fileName);
 
         // string dataPath = Application.dataPath + "/Data/";
@@ -39,10 +40,12 @@ public class MovableObject : MonoBehaviour
 
     void OnMouseDrag()
     {
+        //get the world postion of the mouse
         Vector3 mousePosition = GetMouseWorldPosition();
         
         Debug.Log(mousePosition);
 
+        //set the position of the object to the mouses world position
         transform.position = mousePosition;
     }
 
@@ -58,6 +61,7 @@ public class MovableObject : MonoBehaviour
         
         Debug.Log("Z in Screen Pixels:" + mousePosition.z);
 
+        //convert the mouse position to a world point
         mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
         
         Debug.Log(("Z in World Units: " + mousePosition.z));
@@ -71,6 +75,7 @@ public class MovableObject : MonoBehaviour
         //
         // File.WriteAllText(fileName, jsonPos);
         
+        //use Util function to save the vec3 to a Json file
         Util.SaveVec3ToFileAsJson(dir, fileName, transform.position);
     }
 }
