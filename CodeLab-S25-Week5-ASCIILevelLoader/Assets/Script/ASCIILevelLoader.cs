@@ -9,6 +9,7 @@ public class ASCIILevelLoader : MonoBehaviour
     public GameObject prefabWall;
     public GameObject prefabObstacle;
     public GameObject prefabGoal;
+    public GameObject prefabCoin;
     
     //File variables
     string filePath;
@@ -93,6 +94,9 @@ public class ASCIILevelLoader : MonoBehaviour
                     case 'G':
                         newObj = Instantiate<GameObject>(prefabGoal);
                         break;
+                    case 'C':
+                        newObj = Instantiate<GameObject>(prefabCoin);
+                        break;
                     default:
                         break;
                 }
@@ -104,7 +108,7 @@ public class ASCIILevelLoader : MonoBehaviour
                     newObj.transform.parent = levelHolder.transform;
                     //and set it's position
                     newObj.transform.position =
-                        new Vector3(x + offsetX, -y + offsetY, 0);
+                        new Vector3(x, -y, 0);
                 }
 
                 // if (c == 'P')
@@ -120,6 +124,9 @@ public class ASCIILevelLoader : MonoBehaviour
                 // }
             }
         }
+            
+        levelHolder.transform.position = 
+            new Vector3(offsetX, offsetY, 0);
 
     }
 

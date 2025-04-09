@@ -1,8 +1,9 @@
 WWWWWWWWWWWWWWW
 W-------------W
-W--P----------W
+W--P---C--C---W
 W-------------W
-W-------------W
+W-----C----C--W
+W------CCCC---W
 W--G------*---W
 W-------------W
 WWWWWWWWWWWWWWW
