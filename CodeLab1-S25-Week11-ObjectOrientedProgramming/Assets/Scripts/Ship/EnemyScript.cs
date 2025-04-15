@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyScript : MonoBehaviour
 {
     public GameObject bullet; 
-    //reference to the bullet
+    //reference to the bullet prefab
     void Start()
     {
         InvokeRepeating("Fire", 1, 1);

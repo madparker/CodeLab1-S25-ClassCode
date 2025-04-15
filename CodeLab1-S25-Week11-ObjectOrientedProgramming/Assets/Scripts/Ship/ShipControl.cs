@@ -77,7 +77,7 @@ public class ShipControl : MonoBehaviour
         //if shield exists
         if (shield != null)
         {
-            //run the adjustdamage function from the baseshield class
+            //run the AdjustDamage function from the baseshield class
             damageAmt = shield.AdjustDamage(damageAmt);
 
         }
