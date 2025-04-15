@@ -25,10 +25,10 @@ public class ShipControl : MonoBehaviour
 
     void Start()
     {
-        //get ship rb
+        //get ship RigidBody
         rb2d = GetComponent<Rigidbody2D>();
         
-        //get baseshielf component from inspector
+        //get BaseShield component from inspector
         shield = GetComponent<BaseShield>();
     }
 
@@ -39,12 +39,12 @@ public class ShipControl : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             attack = GetComponent<BaseAttack>();
-            //if base attack exists
+            //if BaseAttack exists
             //spawns a bullet in front of the ship, which moves upwards
 
             if (attack != null)
             {
-                //call the Attack function from baseattack
+                //call the Attack function from BaseAttack
                 attack.Attack();
             }
         }
@@ -70,14 +70,14 @@ public class ShipControl : MonoBehaviour
     
     public void TakeDamage(float damageAmt)
     {
-        //creating object of class shield
+        //creating object of class BaseShield
 
         shield = GetComponent<BaseShield>();
         
         //if shield exists
         if (shield != null)
         {
-            //run the adjustdamage function from the baseshield class
+            //run the AdjustDamage function from the BaseShield class
             damageAmt = shield.AdjustDamage(damageAmt);
 
         }
