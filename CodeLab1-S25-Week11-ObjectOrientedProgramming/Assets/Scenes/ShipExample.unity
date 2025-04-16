@@ -131,10 +131,11 @@ GameObject:
   - component: {fileID: 435983648}
   - component: {fileID: 435983656}
   - component: {fileID: 435983649}
+  - component: {fileID: 435983661}
   - component: {fileID: 435983659}
   - component: {fileID: 435983651}
   - component: {fileID: 435983653}
-  - component: {fileID: 435983658}
+  - component: {fileID: 435983660}
   m_Layer: 0
   m_Name: Ship
   m_TagString: Untagged
@@ -318,20 +319,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shipControl: {fileID: 435983648}
---- !u!114 &435983658
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 435983647}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 380288edb3d734b37b33baa458866422, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 4200488364815117268, guid: 5300849b115cc4c7e94fe98f7c664300,
-    type: 3}
 --- !u!114 &435983659
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -342,6 +329,33 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8975a5b88692d4440954f91c9787bc72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shieldStrength: 50
+--- !u!114 &435983660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 435983647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffef91b52ef79444f832a6dfde349578, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 4200488364815117268, guid: 5300849b115cc4c7e94fe98f7c664300,
+    type: 3}
+--- !u!114 &435983661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 435983647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a670927e1171643b882c63f5099a0914, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   shieldStrength: 50
