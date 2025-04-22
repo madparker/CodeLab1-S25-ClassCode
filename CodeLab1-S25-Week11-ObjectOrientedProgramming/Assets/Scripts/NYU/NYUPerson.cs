@@ -9,6 +9,7 @@ public class NYUPerson
     public string netId;
     public string type;
 
+    //this is the base constructor'
     public NYUPerson()
     {
         name = "Insert Name";
@@ -16,7 +17,7 @@ public class NYUPerson
         type = "NYU Person";
     }
 
-    //this is the base constructor
+    
     public NYUPerson(string name, string netId)
     {
         this.name = name;

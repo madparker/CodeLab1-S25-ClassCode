@@ -14,7 +14,8 @@ public class NYUStudent : NYUPerson
         type = "NYU Student";
     }
 
-    public NYUStudent(string name, string netId, float financialAid, float gpa): base(name, netId)
+    public NYUStudent(string name, string netId, float financialAid, float gpa): 
+        base(name, netId)
     {
         this.financialAid = financialAid;
         this.gpa = gpa;
