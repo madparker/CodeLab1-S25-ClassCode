@@ -71,7 +71,11 @@ public class SimpleConnectionGame : MonoBehaviour
     public void AddToColumn(int column)
     {
         // If a column is full, do nothing.
-        if (ColumnFilled(column)) return;
+        if (ColumnFilled(column))
+        {
+            Debug.Log("col full");
+            return;
+        }
 
         // If either player has already won, do nothing.
         if (BlueWin() || RedWin()) return;

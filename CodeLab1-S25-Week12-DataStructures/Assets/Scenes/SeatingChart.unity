@@ -551,7 +551,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numRows: 8
-  numCols: 3
+  numCols: 5
   display: {fileID: 233746420}
 --- !u!4 &2143577318
 Transform:

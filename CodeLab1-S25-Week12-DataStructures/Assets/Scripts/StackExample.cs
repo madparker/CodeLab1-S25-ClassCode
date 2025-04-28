@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -60,6 +61,11 @@ public class StackExample : MonoBehaviour
             // Display the timer
             display.text = (timePerTurn - timer).ToString("F1");
         }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            ThrowException();
+        }
     }
 
     private void ShowCardStack()
@@ -70,5 +76,10 @@ public class StackExample : MonoBehaviour
         {
             display.text += "\n" + effects.Pop();
         }
+    }
+    
+    void ThrowException()
+    {
+        throw new NotImplementedException();
     }
 }

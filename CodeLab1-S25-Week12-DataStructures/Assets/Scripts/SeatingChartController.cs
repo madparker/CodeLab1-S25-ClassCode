@@ -21,7 +21,12 @@ public class SeatingChartController : MonoBehaviour
                 seatingChart[x, y] = "";
             }
         }
-        seatingChart[1, 0] = "MP";
+        seatingChart[2, 0] = "MP";
+        seatingChart[3, 7] = "SC";
+        seatingChart[4, 3] = "VU";
+        seatingChart[4, 5] = "CM";
+        seatingChart[4, 4] = "ER";
+        seatingChart[1, 7] = "RF";
         
         PrintWhereSeated();
     }

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class QueueExample : MonoBehaviour
 {
     private Queue<string> fishQueue = new Queue<string>();
-
+    
     public Text display;
 
     private float timer = 0;

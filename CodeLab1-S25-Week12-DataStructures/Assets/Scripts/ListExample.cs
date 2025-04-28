@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -69,18 +71,22 @@ public class ListExample : MonoBehaviour
             
 
             // Loop through the entire list
-            for (int i = 0; i < namesList.Count; i++)
-            {
-                // If any of the namesList in the list match what in the input field,
-                // say it's in the list.
-                if (input.text.ToUpper() == namesList[i])
-                {
-                    display.text = "In the list!";
-                }
-            }
+            // for (int i = 0; i < namesList.Count; i++)
+            // {
+            //     // If any of the namesList in the list match what in the input field,
+            //     // say it's in the list.
+            //     if (input.text.ToUpper() == namesList[i])
+            //     {
+            //         display.text = "In the list!";
+            //     }
+            // }
             
             //TODO: Is there a better way to do this? With less code?
             //TODO: That will be faster?
+            if (namesList.Contains(input.text.ToUpper()))
+            {
+                display.text = "In the list!";
+            }
         }
     }
 }
